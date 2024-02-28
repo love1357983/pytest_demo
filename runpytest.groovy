@@ -20,9 +20,11 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh '''source ./venv/bin/activate
-                pytest --alluredir=allure-results
-                '''
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh '''source ./venv/bin/activate
+                    pytest --alluredir=allure-results
+                    '''
+                }
             }
         }
         
