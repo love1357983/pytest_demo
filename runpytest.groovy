@@ -8,7 +8,7 @@ pipeline {
                 git 'https://github.com/love1357983/pytest_demo.git'
             }
         }
-        
+
         stage('Initialize Virtual Environment') {
             steps {
                 sh '''python3 -m venv venv
@@ -27,7 +27,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Publish Allure Report') {
             steps {
                 allure([
@@ -35,6 +35,19 @@ pipeline {
                     jdk: '',
                     results: [[path: 'allure-results']]
                 ])
+            }
+        }
+
+        stage('Send Email') {
+            steps {
+                emailext (
+                    subject: 'Test Results',
+                    body: '''<p>Test results are available in the Allure report.</p>
+                                <p>Please check the following link: <a href="${BUILD_URL}allure">Allure Report</a></p>''',
+                    to: 'example@example.com',
+                    attachLog: true,
+                    mimeType: 'text/html'
+                )
             }
         }
     }
