@@ -14,10 +14,10 @@ class TestDOCSIS_getTURE:
 
 @allure.epic("DOCSIS")
 class TestDOCSIS_getFALSE:
-@allure.feature("DOCSIS_getFALSE")
-@allure.title("amo say get FALSE")
-@allure.testcase("NTLSAN-097", "TC amo say get FALSE")
-@allure.severity(allure.severity_level.MINOR)
-def test_basic1_get_false_func():
-    with allure.step("1. verify values2"):
-        assert Module.get_false() is True
+    @allure.feature("DOCSIS_getFALSE")
+    @allure.title("amo say get FALSE")
+    @allure.testcase("NTLSAN-097", "TC amo say get FALSE")
+    @allure.severity(allure.severity_level.MINOR)
+    def test_basic1_get_false_func():
+        with allure.step("1. verify values2"):
+            assert Module.get_false() is True
