@@ -6,7 +6,7 @@ from libs.module import Module
 class TestDOCSIS_getTURE:
     @allure.feature("DOCSIS_getTURE")
     @allure.title("Verify amo say get TURE")
-    @allure.testcase(https://jira.compalbn.com, "NTLSAN-096")
+    @allure.testcase("https://jira.compalbn.com", "NTLSAN-096")
     @allure.severity(allure.severity_level.CRITICAL)
     def test_basic1_get_true_func():
         with allure.step("1. verify values1"):
@@ -18,7 +18,7 @@ class TestDOCSIS_getTURE:
 class TestDOCSIS_getFALSE:
     @allure.feature("DOCSIS_getFALSE")
     @allure.title("Verfiy amo say get FALSE")
-    @allure.testcase(https://jira.compalbn.com, "NTLSAN-097")
+    @allure.testcase("https://jira.compalbn.com", "NTLSAN-097")
     @allure.severity(allure.severity_level.MINOR)
     def test_basic1_get_false_func():
         with allure.step("1. verify values2"):
